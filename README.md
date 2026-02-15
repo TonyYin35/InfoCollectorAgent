@@ -1,0 +1,2 @@
+# InfoCollectorAgent
+my first agent
