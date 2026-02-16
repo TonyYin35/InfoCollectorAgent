@@ -7,11 +7,14 @@ from tools import ALL_TOOLS
 
 
 def build_agent():
-    model = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0)
+    model = ChatGoogleGenerativeAI(
+        model="gemini-3-flash-preview",
+        include_thoughts=True,
+    )
     model_with_tools = model.bind_tools(ALL_TOOLS)
 
-    def call_llm(state: MessagesState):
-        return {"messages": [model_with_tools.invoke(state["messages"])]}
+    async def call_llm(state: MessagesState):
+        return {"messages": [await model_with_tools.ainvoke(state["messages"])]}
 
     def should_continue(state: MessagesState):
         last = state["messages"][-1]
