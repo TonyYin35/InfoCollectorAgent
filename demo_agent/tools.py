@@ -21,14 +21,4 @@ def calculate(expression: str) -> str:
         return f"Error: {e}"
 
 
-@tool
-def search_info(query: str) -> str:
-    """Search for information (mock). Returns a placeholder response."""
-    return (
-        f"[Mock search result for '{query}']: "
-        "This is a placeholder. Replace this tool with a real search API "
-        "(e.g. Tavily, SerpAPI) for actual results."
-    )
-
-
-ALL_TOOLS = [get_current_time, calculate, search_info]
+ALL_TOOLS = [get_current_time, calculate]
