@@ -1,0 +1,34 @@
+{
+  "categories": {
+    "cosplay_convention": {
+      "include_keywords": ["漫展", "同人展", "动漫展", "cosplay", "comic", "anime", "CP", "票务", "展馆"],
+      "exclude_keywords": ["招聘", "二手", "租房"],
+      "regex_patterns": ["(动漫|同人|漫)展", "(cosplay|comic|anime)"],
+      "boost_rules": [
+        { "if_contains": ["门票", "票务", "预售"], "boost": 2 }
+      ]
+    },
+    "pop_up": {
+      "include_keywords": ["快闪", "pop-up", "pop up", "限时店", "主题店", "联名", "展台"],
+      "exclude_keywords": ["招聘", "转让"],
+      "regex_patterns": ["快闪", "pop[- ]?up", "限时店"],
+      "boost_rules": [
+        { "if_contains": ["限定", "周边", "打卡"], "boost": 1 }
+      ]
+    },
+    "meetup_or_photowalk": {
+      "include_keywords": ["外拍", "约拍", "摄影", "集合", "同好会", "面基", "photowalk", "walk"],
+      "exclude_keywords": ["婚纱", "商业拍摄"],
+      "regex_patterns": ["外拍", "约拍", "photowalk"],
+      "boost_rules": [
+        { "if_contains": ["群", "报名", "集合地点"], "boost": 1 }
+      ]
+    },
+    "other": {
+      "include_keywords": [],
+      "exclude_keywords": [],
+      "regex_patterns": [],
+      "boost_rules": []
+    }
+  }
+}
