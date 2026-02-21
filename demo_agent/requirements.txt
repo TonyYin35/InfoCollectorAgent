@@ -1,0 +1,4 @@
+langgraph==1.0.8
+langchain-google-genai==4.2.0
+langchain-core==1.2.13
+python-dotenv==1.2.1

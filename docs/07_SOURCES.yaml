@@ -1,0 +1,24 @@
+# Fixed source entries (MVP). Maintain 3-5 to start.
+# type: structured_site / venue_official / ticketing_agg
+# extractor: generic_rule | site_x
+
+sources:
+  - source_id: example_ticketing
+    type: ticketing_agg
+    entry_urls:
+      - "https://example.com/events?city={city}"
+    allow_domains: ["example.com"]
+    priority: 5
+    fetch_policy:
+      mode: "requests"
+      timeout_ms: 8000
+      retry: 2
+    extractor: "generic_rule"
+    notes: "replace with your real sites"
+
+
+# https://show.bilibili.com
+# https://www.allcpp.cn
+# https://www.nyato.com
+# https://www.chinajoy.net
+# https://www.comic-con.org
